@@ -146,4 +146,3 @@ Feedstock Maintainers
 =====================
 
 * [@conda-forge/scikit-build](https://github.com/orgs/conda-forge/teams/scikit-build/)
-

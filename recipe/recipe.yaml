@@ -1,6 +1,6 @@
 context:
   name: cython-cmake
-  version: "0.2.0"
+  version: "0.2.1"
   username: scikit-build
 
 package:
@@ -8,8 +8,8 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://github.com//${{ username }}/${{ name|lower }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 0673545871646e1736a2aaaf29f0f96ad1033da8fa6e457ee1cb99289048b8ac
+  url: https://github.com/${{ username }}/${{ name|lower }}/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 12114e238c4fab74ecea84f8ded768b9fd86e7bdc093fbf5fbb9fd073c503b88
 
 build:
   script: ${{ PYTHON }} -m pip install --no-build-isolation --no-deps -vv .
@@ -25,6 +25,7 @@ requirements:
   run:
     - python >=${{ python_min }}
     - importlib_resources
+    - cython
 
 tests:
   - script:
@@ -41,7 +42,6 @@ tests:
         - ${{ stdlib("c") }}
         - python ${{ python_min }}.*
         - pytest
-        - cython
         - scikit-build-core
         - ninja
         - cmake >=3.21
