@@ -1,6 +1,6 @@
 context:
   name: cython-cmake
-  version: "0.2.2"
+  version: "0.3.0"
   username: scikit-build
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/${{ username }}/${{ name|lower }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 32dc97a4f4a88cb1a230613bb5baa61984a7fe5476d408bd2a0e7d6372870f3b
+  sha256: caca45d7c76e6c480a8e7bfb6558d24ca79b97829fbbfab5546ce559b35ddc37
 
 build:
   script: ${{ PYTHON }} -m pip install --no-build-isolation --no-deps -vv .
